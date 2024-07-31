@@ -16,9 +16,4 @@ router.get('/login', (req, res, next) => {
 </form>`)
 });
 
-// router.post('/', (req, res, next)=>{
-//     res.redirect('/')
-// })
-
-
 module.exports = router;

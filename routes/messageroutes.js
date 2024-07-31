@@ -19,32 +19,19 @@ router.get('/', (req, res, next) => {
             <input id="message" type="text" name="message" placeholder="Type your message" required>
             <input id="username" type="hidden" name="username">
             <button type="submit">message</button>
-            </form>
-            <script>
-                    
-                    document.addEventListener('DOMContentLoaded', function() {
-                        const storedUsername = localStorage.getItem('username');
-                        if (!storedUsername) {
-                            const username = prompt('Please enter your username:');
-                            localStorage.setItem('username', username);
-                            document.getElementById('username').value = username;
-                        } else {
-                            document.getElementById('username').value = storedUsername;
-                        }
-                    });
-            </script>`)
+            </form>`)
     })
     
 });
 
 router.post("/",(req, res, next)=>{
-    console.log(req.body);
+    // console.log(req.body);
     const message = req.body.message;
     const username = req.body.username;
 
     // Log message and username
-    console.log('Message:', message);
-    console.log('Username:', username);
+    // console.log('Message:', message);
+    // console.log('Username:', username);
 
     fs.appendFile('chat.txt', `${username}: ${message}\n`, (err) => {
         if (err) {
